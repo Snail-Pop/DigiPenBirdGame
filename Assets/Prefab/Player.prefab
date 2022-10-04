@@ -155,6 +155,7 @@ MonoBehaviour:
   projectile: {fileID: 8996934762977742505, guid: c535a81e3fadfad488ef8a92de0601d8, type: 3}
   speed: 15
   cooldown: 0.15
+  rotationOffset: 0
 --- !u!114 &6246933552989307021
 MonoBehaviour:
   m_ObjectHideFlags: 0

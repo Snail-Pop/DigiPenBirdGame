@@ -44,15 +44,7 @@ public class HealthScript : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-
-            if (DestroyAt0)
-            {
-                DeathEvent(true);
-            }
-            else
-            {
-                DeathEvent(false);
-            }
+            DeathEvent(DestroyAt0);   
         }
     }
     public void GainHealth(int health)
@@ -67,6 +59,13 @@ public class HealthScript : MonoBehaviour
 
     void DeathEvent(bool shouldDestroy)
     {
+
+        DeathEffects deathEffects = GetComponent<DeathEffects>();
+        if (deathEffects != null)
+        {
+            deathEffects.deathEvent.Invoke();
+        }
+
         Destroy(gameObject);
     }
     void SpawnHealthBar(){

@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 819a17f8e295766499294c497272e449
+guid: 7cd9d895366724145ab53ad94f311c72
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - enemyCanvas: {fileID: 1463266136118942573, guid: cb9b87201dc77d84884f29e478cec728, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

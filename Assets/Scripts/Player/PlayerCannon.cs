@@ -11,6 +11,9 @@ public class PlayerCannon : MonoBehaviour
     public float speed = 10;
     private float timer;
     public float cooldown;
+
+    [SerializeField ,Tooltip("How much to rotate the projectile in degrees from ")]
+    float rotationOffset;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +38,7 @@ public class PlayerCannon : MonoBehaviour
             //setup direction to fire
             Vector3 fireDir = (mousePos - spawnPos).normalized;
             //make prefab real
-            GameObject cloneProj = Instantiate(projectile, spawnPos, Quaternion.identity);
+            GameObject cloneProj = Instantiate(projectile, spawnPos, Quaternion.Euler(0, 0, Mathf.Atan2(fireDir.y, fireDir.x)  * Mathf.Rad2Deg + rotationOffset));
             //launch in desired direction
             cloneProj.GetComponent<Rigidbody2D>().velocity = fireDir * speed;
         }

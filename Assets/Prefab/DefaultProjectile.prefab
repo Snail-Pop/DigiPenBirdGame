@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8411715368608418419}
   - component: {fileID: 5754761277872280325}
   - component: {fileID: 6359082229692479698}
+  - component: {fileID: -8699867221738526833}
   m_Layer: 7
   m_Name: DefaultProjectile
   m_TagString: Projectile
@@ -261,3 +262,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 10
   destroyOnCollide: 1
+--- !u!114 &-8699867221738526833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8996934762977742505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd9d895366724145ab53ad94f311c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParticleGameObject: {fileID: 7111814515418963980, guid: e0dae2a23edbb2f44a7dd6b4398df875, type: 3}
