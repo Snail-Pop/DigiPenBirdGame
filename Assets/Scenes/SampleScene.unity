@@ -996,7 +996,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8631413121129539215, guid: e9cd42650076fb744a1dbca2588328b8, type: 3}
   m_PrefabInstance: {fileID: 8631413121160361820}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1036928607
+--- !u!114 &1036928608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1005,13 +1005,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036928598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e52a8d673499d4448d25e70982ca08c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c7cadb65b86c8c4faa4ac6d9fd6d5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  createOnDeath: {fileID: 7160417921731993290, guid: 38074423fcbe1524d9da267e9662ccef, type: 3}
+  damageAmount: 1
+  destroyOnCollide: 0
 --- !u!1 &1714117770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,21 +1089,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weak Dummy
       objectReference: {fileID: 0}
-    - target: {fileID: 3283450373231067748, guid: d57835961c4273e41af009dc6fe08f0d, type: 3}
-      propertyPath: spawnHealthBar
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3283450373231067749, guid: d57835961c4273e41af009dc6fe08f0d, type: 3}
       propertyPath: m_SortingLayer
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3283450373231067749, guid: d57835961c4273e41af009dc6fe08f0d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1231014701
-      objectReference: {fileID: 0}
-    - target: {fileID: 3283450373231067749, guid: d57835961c4273e41af009dc6fe08f0d, type: 3}
-      propertyPath: m_MaskInteraction
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3283450373231067754, guid: d57835961c4273e41af009dc6fe08f0d, type: 3}
       propertyPath: m_RootOrder
@@ -1277,18 +1263,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4020572601499459900, guid: 52cd686d68f15da4f9dd00dd92c53564, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020572601499459900, guid: 52cd686d68f15da4f9dd00dd92c53564, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020572601499459901, guid: 52cd686d68f15da4f9dd00dd92c53564, type: 3}
-      propertyPath: enemyCanvas
-      value: 
-      objectReference: {fileID: 1463266136118942573, guid: cb9b87201dc77d84884f29e478cec728, type: 3}
-    - target: {fileID: 4020572601499459901, guid: 52cd686d68f15da4f9dd00dd92c53564, type: 3}
-      propertyPath: spawnHealthBar
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4020572601499459903, guid: 52cd686d68f15da4f9dd00dd92c53564, type: 3}
@@ -1461,5 +1435,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5010786756981480457, guid: e9cd42650076fb744a1dbca2588328b8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e9cd42650076fb744a1dbca2588328b8, type: 3}
