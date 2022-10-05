@@ -24,7 +24,7 @@ public class PlayerCannon : MonoBehaviour
     void Update()
     {
 
-        timer += Time.deltaTime;
+        /*timer += Time.deltaTime;
 
         //Check for input from the Fire1 axis (Default: mouse1 || joystickButton0)
         if (Input.GetAxisRaw("Fire1") > 0 && timer >= cooldown)
@@ -41,6 +41,6 @@ public class PlayerCannon : MonoBehaviour
             GameObject cloneProj = Instantiate(projectile, spawnPos, Quaternion.Euler(0, 0, Mathf.Atan2(fireDir.y, fireDir.x)  * Mathf.Rad2Deg + rotationOffset));
             //launch in desired direction
             cloneProj.GetComponent<Rigidbody2D>().velocity = fireDir * speed;
-        }
+        }*/
     }
 }

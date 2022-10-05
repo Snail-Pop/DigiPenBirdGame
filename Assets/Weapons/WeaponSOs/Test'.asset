@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49e46181a0f6d147ab58666fca60ab2, type: 3}
+  m_Name: Test'
+  m_EditorClassIdentifier: 
+  fireModes: 0000000001000000
+  fireRate: 0
+  weaponPrefab: {fileID: 4422817626022601706, guid: a6f179b86c7d71e458afea46a28498bd, type: 3}
+  projectile: {fileID: 8996934762977742505, guid: c535a81e3fadfad488ef8a92de0601d8, type: 3}
+  damage: 10
+  prioritization: 0
+  muzzleVelocity: 50
