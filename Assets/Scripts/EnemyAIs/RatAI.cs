@@ -25,10 +25,10 @@ public class RatAI : MonoBehaviour
         
         switch(mode){
             case 0:
-            RunDirectAndLeap(7.5f, 3f, 0.3f, 10);
+            RunDirectAndLeap(7.5f, 2.5f, 3f, 0.5f, 5);
             break;
             case 1:
-            RunDirect(10);
+            RunDirect(5);
             break;
         }
 
@@ -40,13 +40,13 @@ public class RatAI : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().position += movDir.normalized / speed;
     }
 
-    void RunDirectAndLeap(float minDistance, float leapCooldown, float movWaitTime, float speed){
+    void RunDirectAndLeap(float leapSpeed, float minDistance, float leapCooldown, float movWaitTime, float speed){
         
         Vector3 movDir = target.transform.position - transform.position; 
         float distance = movDir.magnitude;
         
         if(!movWait){
-            transform.position += movDir.normalized / speed;
+            transform.position += (movDir.normalized * speed) * Time.deltaTime;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         }
         else if(moveTimer > movWaitTime){
