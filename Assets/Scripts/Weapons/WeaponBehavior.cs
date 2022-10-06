@@ -11,8 +11,10 @@ public class WeaponBehavior : MonoBehaviour
     [SerializeField]
     private WeaponDataContainer weaponData;
     int selectedFireMode;
-    public Transform playerTransform;
+    public GameObject playerGO;
     private Animator myAnimator;
+    AudioSource myAud;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +24,14 @@ public class WeaponBehavior : MonoBehaviour
             myAnimator = gameObject.GetComponent<Animator>();
 
         }
-        
+        myAud = gameObject.GetComponent<AudioSource>();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        FollowPlayer();
         RotateTowardsMouse();
         PreShoot();
         FMM(weaponData.fireModes);
@@ -52,12 +55,13 @@ public class WeaponBehavior : MonoBehaviour
 
             case 0:
             if(Input.GetMouseButtonDown(0)){
-                Shoot(weaponData.muzzleVelocity, weaponData.damage, weaponData.projectile);
+                Shoot(weaponData.muzzleVelocity, weaponData.projectile);
             }
-            break;
+                break;
             case 1:
-            if(Input.GetMouseButton(0) && timer > weaponData.fireRate){
-                Shoot(weaponData.muzzleVelocity, weaponData.damage, weaponData.projectile);
+            if(Input.GetMouseButton(0) && timer > weaponData.shotDelay){
+                Shoot(weaponData.muzzleVelocity, weaponData.projectile);
+                    timer = 0;
             }
             else{
                 timer += Time.deltaTime;
@@ -68,7 +72,8 @@ public class WeaponBehavior : MonoBehaviour
 
     }
 
-    void Shoot(float muzzleVelocity, float damage, GameObject projectile){
+    void Shoot(float muzzleVelocity, GameObject projectile){
+        MuzzleFlash(weaponData.muzzleFlashPrefab);
         timer = 0;
         //set spawn location
         Vector3 spawnPos = transform.position;
@@ -81,6 +86,7 @@ public class WeaponBehavior : MonoBehaviour
         GameObject cloneProj = Instantiate(projectile, spawnPos, Quaternion.Euler(0, 0, Mathf.Atan2(fireDir.y, fireDir.x)  * Mathf.Rad2Deg + rotationOffset));
         //launch in desired direction
         cloneProj.GetComponent<Rigidbody2D>().velocity = fireDir * muzzleVelocity;
+        myAud.PlayOneShot(weaponData.shootSound);
     }
 
     void RotateTowardsMouse(){
@@ -95,10 +101,10 @@ public class WeaponBehavior : MonoBehaviour
         //Flip gun if rotation is > 180 
         myAnimator.SetFloat("Rotation", weaponRoationValue);
 
-        transform.position = playerTransform.position + (mousePos - transform.position).normalized;
+        transform.position = playerGO.transform.position + (mousePos - transform.position).normalized;
     }
 
-    void FollowPlayer(){
+    void MuzzleFlash(GameObject muzzleFlashGO){
 
         
 

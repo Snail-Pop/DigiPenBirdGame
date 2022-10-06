@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Test'
   m_EditorClassIdentifier: 
   fireModes: 0000000001000000
-  fireRate: 0
-  weaponPrefab: {fileID: 4422817626022601706, guid: a6f179b86c7d71e458afea46a28498bd, type: 3}
+  shotDelay: 0.25
+  weaponPrefab: {fileID: 0}
   projectile: {fileID: 8996934762977742505, guid: c535a81e3fadfad488ef8a92de0601d8, type: 3}
   damage: 10
   prioritization: 0
-  muzzleVelocity: 50
+  muzzleVelocity: 35
+  shootSound: {fileID: 8300000, guid: cae2ef1ae9bf8474ea3389cbb62b98a5, type: 3}

@@ -1,3 +1,9 @@
+/*
+Name: Tayvian R Eberle
+Date: 10/5/2022
+Desc: Is what the name implies, handles simple, run towards & lunge behaviors anything it is attached to.
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
