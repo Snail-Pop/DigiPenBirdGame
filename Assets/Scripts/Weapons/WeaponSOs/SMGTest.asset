@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c49e46181a0f6d147ab58666fca60ab2, type: 3}
-  m_Name: Test'
+  m_Name: SMGTest
   m_EditorClassIdentifier: 
   fireModes: 0000000001000000
-  shotDelay: 0.25
+  shotDelay: 0.1
   weaponPrefab: {fileID: 0}
   projectile: {fileID: 8996934762977742505, guid: c535a81e3fadfad488ef8a92de0601d8, type: 3}
-  damage: 10
-  prioritization: 0
-  muzzleVelocity: 35
-  shootSound: {fileID: 8300000, guid: 9c7c59ffb3c59c549ad26832d1fa0fb8, type: 3}
-  muzzleFlashPrefab: {fileID: 8853237175257106187, guid: f9f6376d03dc0dc4bbc753d1779d5d5e, type: 3}
+  damage: 5
+  prioritization: 4
+  muzzleVelocity: 45
+  shootSound: {fileID: 8300000, guid: aaa66fd4d6554b74b8bac73776d1aef2, type: 3}
+  muzzleFlashPrefab: {fileID: 5735541166859635714, guid: dfeeb22d1bc18f740b382726f5c1a7d6, type: 3}

@@ -14,7 +14,8 @@ public class WeaponBehavior : MonoBehaviour
     public GameObject playerGO;
     private Animator myAnimator;
     AudioSource myAud;
-
+    public GameObject muzzleFlashSpawnGO; 
+    public GameObject barrel;
 
     // Start is called before the first frame update
     void Start()
@@ -76,7 +77,7 @@ public class WeaponBehavior : MonoBehaviour
         MuzzleFlash(weaponData.muzzleFlashPrefab);
         timer = 0;
         //set spawn location
-        Vector3 spawnPos = transform.position;
+        Vector3 spawnPos = barrel.transform.position;
         //get mouse location
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
@@ -87,6 +88,8 @@ public class WeaponBehavior : MonoBehaviour
         //launch in desired direction
         cloneProj.GetComponent<Rigidbody2D>().velocity = fireDir * muzzleVelocity;
         myAud.PlayOneShot(weaponData.shootSound);
+        MuzzleFlash(weaponData.muzzleFlashPrefab);
+
     }
 
     void RotateTowardsMouse(){
@@ -105,8 +108,7 @@ public class WeaponBehavior : MonoBehaviour
     }
 
     void MuzzleFlash(GameObject muzzleFlashGO){
-
-        
-
+        Instantiate(muzzleFlashGO, muzzleFlashSpawnGO.transform.position, transform.rotation);
+        muzzleFlashGO.transform.position = muzzleFlashSpawnGO.transform.position;
     }
 }
