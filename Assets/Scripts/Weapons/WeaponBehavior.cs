@@ -104,7 +104,10 @@ public class WeaponBehavior : MonoBehaviour
         //Flip gun if rotation is > 180 
         myAnimator.SetFloat("Rotation", weaponRoationValue);
 
-        transform.position = playerGO.transform.position + (mousePos - transform.position).normalized;
+        if(playerGO != null)
+        {
+            transform.position = playerGO.transform.position + (mousePos - transform.position).normalized;
+        }
     }
 
     void MuzzleFlash(GameObject muzzleFlashGO){
