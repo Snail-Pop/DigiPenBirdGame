@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6053856459061461221}
   - component: {fileID: 6053856459061461209}
   - component: {fileID: 6053856459061461208}
+  - component: {fileID: 3979310717294622096}
+  - component: {fileID: 2148632450579417805}
   m_Layer: 0
   m_Name: EvilCircle
   m_TagString: Untagged
@@ -135,11 +137,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paceSpeed: 1000
   waypoints:
-  - {x: 7.5, y: 1, z: 0}
-  - {x: 7.5, y: -1, z: 0}
+  - {x: 10, y: 2.5, z: 0}
   closeEnough: 0.3
   chaseSpeed: 1500
-  chaseRadius: 15
+  chaseRadius: 5
   targetTag: Player
 --- !u!50 &6053856459061461208
 Rigidbody2D:
@@ -162,3 +163,68 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3979310717294622096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053856459061461219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79c21a65eecbde4c8be5c6b7203b294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  collisionEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HealthScript, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  collisionExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  collisionStayEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  otherCollider: {fileID: 6053856459061461220}
+--- !u!114 &2148632450579417805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053856459061461219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e52a8d673499d4448d25e70982ca08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  createOnDeath: {fileID: 7160417921731993290, guid: 38074423fcbe1524d9da267e9662ccef, type: 3}
